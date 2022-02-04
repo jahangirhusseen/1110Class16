@@ -1,0 +1,253 @@
+/* ========== Google Fonts =========== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    --shadow-1 :-4px 9px 39px -3px rgba(230,14,14,0.35);
+    --shadow-2 : 0 .5rem 1rem rgba(0,0,0,.15);
+    --shadow-3 : 0  1rem 3rem rgba(0,0,0, .175); 
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+    font-family: Poppins;
+}
+a,a:hover{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+
+
+.modal_section{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../imgs/img1.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.modal_section::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 22, 22, 0.801);
+    top: 0;
+    left:0;
+    opacity: 0.7;
+}
+
+.content{
+   z-index: 2;
+   text-align: center;
+   width: 650px;
+}
+.content h1{
+    color: #2ecc71;
+    font-size: 62px;
+
+}
+.content p{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: #2ecc71;
+}
+
+.button {
+    background: none;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 26px;
+    position: relative;
+    text-transform: uppercase;
+
+}
+.button:hover {
+    border: 3px solid #2ecc71;
+    color: #2ecc71;
+
+}
+
+.custom_modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:2;
+    transform: translateY(-100px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+
+}
+
+.custom_modal.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0px);
+}
+.cm_content{
+    box-shadow: var(--shadow-1);
+}
+.cm_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.close{
+    font-size: 40px;
+    border: none;
+    background: transparent;
+    padding: 15px 30px;
+    cursor: pointer; 
+}
+.cm_content{
+  background: #fff;
+   width: 450px;
+   height: auto;
+   border-radius: 10px;
+   z-index: 99;
+  
+  
+}
+.cm_header h2{
+    padding: 15px 30px;
+}
+.cm_body p{
+    padding: 10px 30px;
+}
+.cm_footer{
+    padding: 10px 30px;
+}
+
+
+.modal_alert{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    background-color: rgba(255,255,255,0.6);
+    
+
+}
+.a_content{
+    width: 380px;
+    background-color: #fff;
+    box-shadow: var(--shadow-2);
+}
+.a_header{
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 30px 0;
+    
+    
+}
+
+.a_header{
+    border-bottom:1px solid #ddd;
+    padding-bottom: 10px;
+}
+.a_header h2{
+    padding:0px;
+}
+.aclose{
+    padding:0px;
+    font-size: 30px;
+}
+.a_body p {
+    padding: 10px 30px 15px;
+}
+.a_btns{
+    text-align: end;
+    padding-bottom: 30px;
+    
+    
+}
+.a_btns a{
+    color: rgb(60, 0, 255);
+    font-weight: 400;
+    border-radius: 7px;
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+}
+.a_btns a:nth-child(2){
+    background: rgb(60, 0, 255);
+    color: #fff;
+    margin-left: 15px;
+}
+
+
+/* ========accordio=============== */
+.section_accordion{
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    background-color: #ddd;
+}
+.custom_accordion{
+    width: 600px;
+    margin: 0 auto; 
+   
+}
+.accordion_item{
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: var(--shadow-2);
+}
+.accordion_header{
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+    align-items: center;
+    
+}
+.accordion_header::before{
+    content: '\21E8';
+    font-size: 20px;
+    transition: .3s; 
+}
+.accordion_header.acc_arrow::before{
+    transform: rotate(-270deg);
+}
+
+
+.accordion_body{
+    transition: .3s;
+    height: 0;
+    overflow: hidden;
+}
+.accordion_content{
+    padding: 15px 30px;
+}
